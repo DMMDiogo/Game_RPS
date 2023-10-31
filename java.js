@@ -1,52 +1,90 @@
-const object = ["paper", "scissor", "rock"];
 
- 
 
-function getComputerChoice() {
+
+
+  const object = ["paper", "scissor", "rock"];
+  const rockButton = document.getElementById("rock");
+  const paperButton = document.getElementById("paper");
+  const scissorButton = document.getElementById("scissor");
+
+
+  let userChoice;
+  
+
+  function getComputerChoice() {
     let numberObject = Math.floor(Math.random() * 3);
-  return object[numberObject];
+    return object[numberObject];
+  }
+  
+  scissorButton.addEventListener('click', () => {
+    const userChoice = "scissor";
+    console.log(`You chose: ${userChoice}`);
+    const result = playRound(getComputerChoice(), userChoice);
+    console.log(result);
+  
+    const content = document.querySelector(".result");
+    const header = content.querySelector("h3");
+    header && header.remove();
+  
+    const newHeader = document.createElement("h3");
+    newHeader.textContent = result;
+    content.appendChild(newHeader);
+  });
+  
+  rockButton.addEventListener('click', () => {
+
+    const userChoice = "rock";
+    console.log(`You chose: ${userChoice}`);
+    const result = playRound(getComputerChoice(), userChoice);
+    console.log(result);
+  
+    const content = document.querySelector(".result");
+    const header = content.querySelector("h3");
+    header && header.remove();
+  
+    const newHeader = document.createElement("h3");
+    newHeader.textContent = result;
+    content.appendChild(newHeader);
+
+    const buttons = document.querySelectorAll('.selectable');
+
+  });
+  
+  paperButton.addEventListener('click', () => {
+    const userChoice = "paper";
+    console.log(`You chose: ${userChoice}`);
+    const result = playRound(getComputerChoice(), userChoice);
+    console.log(result);
+  
+    const content = document.querySelector(".result");
+    const header = content.querySelector("h3");
+    header && header.remove();
+  
+    const newHeader = document.createElement("h3");
+    newHeader.textContent = result;
+    content.appendChild(newHeader);
+  });
+  
+
+function playRound(computerChoice, userChoice) {
+  if (computerChoice === userChoice) {
+    console.log("It's a tie");
+    return "It's a tie";
+  } else if (computerChoice === "paper" && userChoice === "scissor") {
+    console.log("You win Human");
+    return "You Win Human";
+  } else if (computerChoice === "rock" && userChoice === "paper") {
+    console.log("You win Human");
+    return "You Win Human";
+  } else if (computerChoice === "scissor" && userChoice === "rock") {
+    console.log("You Win Human");
+    return "You Win Human";
+  } else {
+    console.log("The Computer Wins")
+    return "The Computer Wins";
+  }
 }
 
- const userInput = prompt("Choose your Warrior");
- const userChoice = userInput.toLowerCase();
-
- const computerChoice = getComputerChoice();
-
-
- function playRound(computerChoice, userChoice) {
-
-  
-
-    if (computerChoice === userChoice) {
-        console.log("It's a tie");
-        return "It's a tie";
-      
-    }
-
-   else if (computerChoice === "paper" && userChoice === "scissor") {
-        
-        console.log("You win Human");
-        return "You Win Human";
-    }
-
-    else if (computerChoice === "rock" && userChoice === "paper") {
-        
-        console.log("You win Human");
-        return "You Win Human";
-    }
-
-    else if (computerChoice === "scissor" && userChoice === "rock") {
-
-      console.log("You Win Human");
-      return "You Win Human";
-    }
-    
-    else {
-      console.log("The Computer Wins")
-      return "The Computer Wins";
-    }
-  
-  }
 
 
   function game () {
@@ -57,7 +95,7 @@ function getComputerChoice() {
     
 
     for(let round = 1 ; round <= 5; round ++){
-      const playerSelection = prompt("Enter your Warrior");
+      const playerSelection = userChoice;
         const computerSelection = getComputerChoice();
         const result = playRound(playerSelection, computerSelection);
 
@@ -95,3 +133,4 @@ function getComputerChoice() {
  console.log(playRound(computerChoice, userChoice));
 
  console.log(game())
+

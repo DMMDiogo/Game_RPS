@@ -1,0 +1,118 @@
+
+body {
+    height: 100vh;
+    margin: 0;
+    font-family: "Segoe UI", system-ui, sans-serif;
+    background-color: rgb(17, 34, 63);
+}
+
+div {
+    display: flex;
+    flex-direction: column;
+    margin: 0px auto;
+}
+
+.result {
+    color: rgb(161, 241, 248);
+    display: flex;
+    margin: 10px auto;
+    font-size: 22px;
+    font-weight: 300;
+}
+h1 {
+    margin: 0px auto;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: white;
+}
+.content {
+    display: flex;
+    flex-direction: row;
+    
+    
+}
+
+.container {
+    margin: 20px; 
+}
+
+.img-container {
+    display: flex;
+    flex-direction: column;
+}
+
+button {
+    --clr-font-main: hsla(0 0% 20% / 100);
+    --btn-bg-1: rgb(38, 158, 195);
+    --btn-bg-2: rgb(42, 84, 151);
+    --btn-bg-color: hsla(360 100% 100% / 1);
+    --radii: 0.5em;
+    cursor: pointer;
+    padding: 0.9em 1.4em;
+    min-width: 120px;
+    min-height: 44px;
+    font-size: var(--size, 1rem);
+    font-family: "Segoe UI", system-ui, sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    transition: 0.8s;
+    background-size: 280% auto;
+    background-image: linear-gradient(325deg, var(--btn-bg-2) 0%, var(--btn-bg-1) 55%, var(--btn-bg-2) 90%);
+    border: none;
+    border-radius: var(--radii);
+    color: var(--btn-bg-color);
+    box-shadow: 0px 0px 20px rgba(71, 184, 255, 0.5), 0px 5px 5px -1px rgba(58, 125, 233, 0.25), inset 4px 4px 8px rgba(175, 230, 255, 0.5), inset -4px -4px 8px rgba(19, 95, 216, 0.35);
+  }
+  
+  button:hover {
+    background-position: right top;
+  }
+  
+  button:is(:focus, :focus-visible, :active) {
+    outline: none;
+    box-shadow: 0 0 0 3px var(--btn-bg-color), 0 0 0 6px var(--btn-bg-2);
+  }
+  
+  button.selected img {
+    transform: scale(1.2);
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    button {
+      transition: linear;
+    }
+  }
+  
+  button.selected {
+    outline: none;
+    box-shadow: 0 0 0 3px var(--btn-bg-color), 0 0 0 6px var(--btn-bg-2);
+  }
+  
+  button.selected img {
+    transform: scale(1.2);
+  }
+  
+
+
+img {
+    height: 450px;
+    width: 300px;
+    object-fit: cover;
+    margin-bottom: 32px;
+    border-radius: 16px;
+    box-shadow:  
+    0 2px 4px rgba(0, 0, 0, 0.1), 
+    0 4px 8px rgba(0, 0, 0, 0.1), 
+    0 8px 16px rgba(0, 0, 0, 0.1), 
+    0 16px 32px rgba(0, 0, 0, 0.1), 
+    0 32px 64px rgba(0, 0, 0, 0.1),
+    inset 0 0 20px rgba(255, 255, 255, 0.1); 
+  
+}
+
+
+ 
+  
+
+
